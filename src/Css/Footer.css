@@ -1,0 +1,37 @@
+.Footer {
+  width: 100vw;
+  height: 75px;
+  background-color: #0F143A;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  margin: auto 0.5em auto auto;
+}
+
+.icons > img {
+  margin: auto 0.25em auto auto;
+  width: 2em;
+  height: 2em;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.icons p {
+  color: white;
+  margin-right: 1em;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+.icons img:hover + p {
+  text-decoration: underline;
+}
