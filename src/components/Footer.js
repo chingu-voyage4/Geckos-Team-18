@@ -20,36 +20,28 @@ class Footer extends Component {
     return (
       <Paper zDepth={1}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
-        <BottomNavigationItem
-          label="methodo"
-          icon={gitHub}
-          onClick={() => this.select(0)}
-        />
-        <BottomNavigationItem
-          label="eam "
-          icon={gitHub}
-          onClick={() => this.select(1)}
-        />
-        <BottomNavigationItem
-          label="agendam"
-          icon={gitHub}
-          onClick={() => this.select(2)}
-        />
-        <BottomNavigationItem
-          label="sumptum"
-          icon={gitHub}
-          onClick={() => this.select(3)}
-        />
+          <BottomNavigationItem
+            label="methodo"
+            icon={gitHub}
+            onClick={() => this.select(0)}
+          />
+          <BottomNavigationItem
+            label="eam "
+            icon={gitHub}
+            onClick={() => this.select(1)}
+          />
+          <BottomNavigationItem
+            label="agendam"
+            icon={gitHub}
+            onClick={() => this.select(2)}
+          />
+          <BottomNavigationItem
+            label="sumptum"
+            icon={gitHub}
+            onClick={() => this.select(3)}
+          />
         </BottomNavigation>
       </Paper>
-      /*<div className="Footer">
-        <div className="icons">
-          <img src={GitHubIcon} alt="Link to ... Github" onClick={window.open('anotherpage.html', '_blank')}/><p> methodo </p>
-          <img src={GitHubIcon} alt="Link to ... Github" onClick={window.open('anotherpage.html', '_blank')}/><p> eam </p>
-          <img src={GitHubIcon} alt="Link to ... Github" onClick={window.open('anotherpage.html', '_blank')}/><p> agendam </p>
-          <img src={GitHubIcon} alt="Link to ... Github" onClick={window.open('anotherpage.html', '_blank')}/><p> sumptum </p>
-        </div>
-      </div>*/
     );
   }
 }
