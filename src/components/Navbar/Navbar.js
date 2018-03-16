@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import "../Css/Navbar.css";
+import "./Navbar.css";
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import Paper from 'material-ui/Paper';
 
 class Navbar extends Component {
   constructor(props) {
