@@ -14,15 +14,17 @@ handleToggle = () => this.setState({open: !this.state.open});
 
   render() {
     return (
-      <div>
+      <div className='navbar'>
         <AppBar zDepth={1}
           title="ChatApp"
+          // set a couple of inline styles to change the background color to match one we selected
+          // for the theme on the Figma and palleton
+          style={{ height: 'auto', backgroundColor: '#15df88', borderBottom: '1px solid white' }}
             iconClassNameRight = "muidocs-icon-navigation-expand-more"
             onLeftIconButtonClick={this.handleToggle}
         />
         <Drawer open={this.state.open}
           docked={false}
-          open={this.state.open}
           onRequestChange={(open) => this.setState({open})}>
             <MenuItem>Friends</MenuItem>
             <MenuItem>Messages</MenuItem>
