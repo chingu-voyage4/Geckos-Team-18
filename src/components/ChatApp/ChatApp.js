@@ -27,13 +27,13 @@ class ChatApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-        <div className="ChatApp">
+
           <Navbar/>
       <RecentList/>
           <MessageWindow />
 
           <Footer/>
-        </div>
+          </MuiThemeProvider>
     );
   }
 }
