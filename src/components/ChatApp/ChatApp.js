@@ -12,7 +12,7 @@ import './ChatApp.css';
 
 // A couple of adjustments to begin generating a custom theme for
 // our project. There are many other components that can be styled
-// as a part of a custom theme. canvasColor change was necessary to
+// as a part of a custom theme. canvasColor change was necessary to 
 // set the default background color of most imported Material-UI
 // components. Text color must be white to show up on dark backgrounds.
 
@@ -27,13 +27,13 @@ class ChatApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-        <div className="ChatApp">
+
           <Navbar/>
-          <RecentList/>
-          <MessageWindow/>
+      <RecentList/>
+          <MessageWindow />
+
           <Footer/>
-        </div>
-    </MuiThemeProvider>
+          </MuiThemeProvider>
     );
   }
 }
