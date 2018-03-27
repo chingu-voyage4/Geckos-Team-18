@@ -1,0 +1,6 @@
+.navbar {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  align-self: flex-start;
+}
