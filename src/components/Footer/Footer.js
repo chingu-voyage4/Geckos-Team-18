@@ -15,7 +15,7 @@ class Footer extends Component {
       height: 'auto',
       width: 100 + 'vw',
       margin: 0,
-      textAlign: 'center',
+      textAlign: 'center'
     };
     //Name placeholders TODO
     return (
