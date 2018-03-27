@@ -1,11 +1,13 @@
 // TOP LEVEL COMPONENT
 
 import React, { Component } from 'react';
+
 import Footer from '../Footer/Footer.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js'
 import MessageWindow from '../MessageWindow/MessageWindow'
+import RecentList  from '../RecentList/RecentList';
 import './ChatApp.css';
 
 // A couple of adjustments to begin generating a custom theme for
@@ -27,10 +29,11 @@ class ChatApp extends Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <div className="ChatApp">
           <Navbar/>
+      <RecentList/>
           <MessageWindow />
+
           <Footer/>
         </div>
-      </MuiThemeProvider>
     );
   }
 }
