@@ -6,8 +6,6 @@ import { ListItem } from 'material-ui/List';
 
 import './ActiveUser.css';
 
-const style = {margin: 5};
-
 class ActiveUser extends Component {
 render() {
     return (
