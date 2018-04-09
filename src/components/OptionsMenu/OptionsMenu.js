@@ -4,7 +4,6 @@ import Divider from 'material-ui/Divider';
 import ActionSearch from 'material-ui/svg-icons/action/search';
 import SocialNotifications from 'material-ui/svg-icons/social/notifications';
 import ImageColorLens from 'material-ui/svg-icons/image/color-lens';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { TextField, RaisedButton } from 'material-ui';
 import { white } from 'material-ui/styles/colors';
 
@@ -15,7 +14,6 @@ class OptionsMenu extends Component {
         return (
             <div class="optionsMenu">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-                <MuiThemeProvider>
                     <div class="title">
                         <p>Options</p>
                     </div>
@@ -50,7 +48,6 @@ class OptionsMenu extends Component {
                         ]}
                         />                       
                     </List>
-                </MuiThemeProvider>
             </div>
         )
     }
