@@ -9,3 +9,8 @@
   margin-bottom: 1px;
   width: 60vw;
 }
+
+List {
+  width: 100%;
+  background-color: rgb(244, 23, 90, 0.3);
+}
