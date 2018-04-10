@@ -1,7 +1,8 @@
 .optionsMenu {
     background-color: #0F143A;
     color:white;
-    padding-top:10vh;
+    margin-top: 20px;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
