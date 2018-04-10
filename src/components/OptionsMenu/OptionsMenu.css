@@ -1,5 +1,8 @@
 .optionsMenu {
+    /*
     background-color: #0F143A;
+    blue background doesnt really work so switched to white
+    */
     color:white;
     margin-top: 20px;
     padding: 1em;
@@ -12,5 +15,5 @@
 
 p {
     font-family: Roboto;
-    color:white;
+    color:black;
 }
