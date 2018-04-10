@@ -46,7 +46,9 @@ class MessageWindow extends Component {
 
     const listStyle = {
       height: 'auto',
-      width: '80%',
+      marginBottom: 'auto',
+      overflowY: 'scroll',
+      width: '85%',
     }
 
     const listItemStyle = {

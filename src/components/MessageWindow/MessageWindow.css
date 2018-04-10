@@ -6,6 +6,7 @@
   align-items: center;
   background-color: #0F143A !important;
   height: 80vh;
+  max-height: 80vh;
   margin-bottom: 1px;
   width: 60vw;
 }
