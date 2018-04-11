@@ -28,7 +28,8 @@ class MessageInput extends Component {
 
       sendMessage() {  //to server
         this.socket.emit('SEND_MESSAGE', {
-          message: this.state.message
+          message: this.state.message,
+          fromWhatUser: this.state.handle, //name of user who sent message
         })
             this.setState({messages: [...this.state.messages, this.state.message]})
             this.setState({message: ""})
@@ -70,7 +71,7 @@ class MessageInput extends Component {
         backgroundColor: '#fff'
       }
     }
-    const { fromMeStyle, toMeStyles } = styles;
+    const { fromMeStyle } = styles;
 
     return (
     <div className='input'>
@@ -82,8 +83,7 @@ class MessageInput extends Component {
           onChange={this.onChangeHandler}
           value={this.state.message}
           />
-        <RaisedButton backgroundColor='#F4175A'label='From Me' style={fromMeStyle} onClick={this.sendMessage}/>
-        <RaisedButton backgroundColor='#15DF88'label='To Me' style={toMeStyles} />
+        <RaisedButton backgroundColor='#15DF88'label='Send' style={fromMeStyle} onClick={this.sendMessage}/>
       </form>
     </div>
     );

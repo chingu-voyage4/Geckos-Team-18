@@ -21,6 +21,7 @@ class MessageWindow extends Component {
     this.socket = io('localhost:8080');
     this.socket.on('RECEIVE_MESSAGE', function(data){ //listen for " RECEIVE_MESSAGE" from server
         addMessage(data);
+        console.log(data);
     });
 
     this.socket.on('SOMEONE_TYPING', (data) => {
