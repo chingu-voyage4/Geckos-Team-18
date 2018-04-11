@@ -2,14 +2,13 @@
 
 import React, { Component } from 'react';
 
-import Footer from '../Footer/Footer.js';
+//import Footer from '../Footer/Footer.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js'
-import MessageWindow from '../MessageWindow/MessageWindow'
-import RecentList  from '../RecentList/RecentList';
-import OptionsMenu from '../OptionsMenu/OptionsMenu'
-import './ChatApp.css';
+import RegistrationCard from './RegistrationCard.js';
+
+import "./RegistrationApp.css";
 
 // A couple of adjustments to begin generating a custom theme for
 // our project. There are many other components that can be styled
@@ -24,22 +23,19 @@ const muiTheme = getMuiTheme({
   }
 });
 
-class ChatApp extends Component {
+class RegistrationApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
           <div>
-            <Navbar/>
-            <div className = "flex-container">
-              <RecentList/>
-              <MessageWindow />
-              <OptionsMenu />
-            </div>
-            <Footer/>
+          <Navbar/>
+          <div className="flex-container"> 
+            <RegistrationCard/>
+          </div>
           </div>
       </MuiThemeProvider>
     );
   }
 }
 
-export default ChatApp;
+export default RegistrationApp;
