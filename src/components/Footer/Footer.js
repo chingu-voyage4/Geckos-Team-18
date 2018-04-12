@@ -23,19 +23,19 @@ class Footer extends Component {
         <Paper style={style} zDepth={1}>
           <IconButton
             iconClassName="fab fa-github" tooltip="sim" iconStyle={{color: 'white'}}
-            tooltipPosition="center"
+            tooltipPosition="top"
           />
           <IconButton
             iconClassName="fab fa-github" tooltip="immittant" iconStyle={{ color: 'white' }}
-            tooltipPosition="center"
+            tooltipPosition="top"
           />
           <IconButton
             iconClassName="fab fa-github" tooltip="argumenti" iconStyle={{ color: 'white' }}
-            tooltipPosition="center"
+            tooltipPosition="top"
           />
           <IconButton
             iconClassName="fab fa-github" tooltip="societati" iconStyle={{ color: 'white' }}
-            tooltipPosition="center"
+            tooltipPosition="top"
           />
         </Paper>
       </div>

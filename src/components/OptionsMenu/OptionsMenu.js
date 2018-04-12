@@ -5,7 +5,7 @@ import ActionSearch from 'material-ui/svg-icons/action/search';
 import SocialNotifications from 'material-ui/svg-icons/social/notifications';
 import ImageColorLens from 'material-ui/svg-icons/image/color-lens';
 import { TextField, RaisedButton } from 'material-ui';
-import { white } from 'material-ui/styles/colors';
+import { black } from 'material-ui/styles/colors'; // changed frome white to black
 
 import './OptionsMenu.css';
 
@@ -20,8 +20,8 @@ class OptionsMenu extends Component {
                     <Divider/>
                     <List>
                         <ListItem primaryText={<p>Change Message Color</p>}
-                         style={{color:'white'}}
-                        leftIcon={<ImageColorLens color={white} />}
+                         style={{color:'black'}}
+                        leftIcon={<ImageColorLens color={black} />}
                         nestedItems={[
                             <ListItem
                              key={4}
@@ -31,8 +31,8 @@ class OptionsMenu extends Component {
                         />
                         <Divider/>
                         <ListItem primaryText={<p>Notification Settings</p>}
-                         style={{color:'white'}}
-                        leftIcon={<SocialNotifications color={white} />}
+                         style={{color:'black'}}
+                        leftIcon={<SocialNotifications color={black} />}
                         nestedItems={[
                             <ListItem
                             key={5}
@@ -42,8 +42,8 @@ class OptionsMenu extends Component {
                         />
                         <Divider/>
                         <ListItem primaryText={<p>Conversation Search</p>}
-                        style={{color:'white'}}
-                        leftIcon={<ActionSearch color={white} />}
+                        style={{color:'black'}}
+                        leftIcon={<ActionSearch color={black} />}
                         nestedItems={[
                             <TextField key={6}/>,
                             <RaisedButton label="Search" key={7}/>
