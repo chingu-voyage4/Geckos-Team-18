@@ -12,9 +12,9 @@ import './OptionsMenu.css';
 class OptionsMenu extends Component {
     render(){
         return (
-            <div class="optionsMenu">
+            <div className="optionsMenu">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-                    <div class="title">
+                    <div className="title">
                         <p>Options</p>
                     </div>
                     <Divider/>
@@ -24,9 +24,10 @@ class OptionsMenu extends Component {
                         leftIcon={<ImageColorLens color={black} />}
                         nestedItems={[
                             <ListItem
-                             key={1}
+                             key={4}
                             primaryText={<p>Test</p>}
                             />]}
+                        key={1}
                         />
                         <Divider/>
                         <ListItem primaryText={<p>Notification Settings</p>}
@@ -34,19 +35,21 @@ class OptionsMenu extends Component {
                         leftIcon={<SocialNotifications color={black} />}
                         nestedItems={[
                             <ListItem
-                            key={1}
+                            key={5}
                             primaryText={<p>Test</p>}
                             />]}
+                        key={2}
                         />
                         <Divider/>
                         <ListItem primaryText={<p>Conversation Search</p>}
                         style={{color:'black'}}
                         leftIcon={<ActionSearch color={black} />}
                         nestedItems={[
-                            <TextField/>,
-                            <RaisedButton label="Search" />
+                            <TextField key={6}/>,
+                            <RaisedButton label="Search" key={7}/>
                         ]}
-                        />
+                        key={3}
+                        />                       
                     </List>
             </div>
         )

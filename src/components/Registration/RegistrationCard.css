@@ -1,0 +1,10 @@
+.registrationCard {
+    padding-top:10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    align-items: center;
+    margin-left:25%;
+    margin-right:25%;
+}
