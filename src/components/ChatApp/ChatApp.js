@@ -27,12 +27,14 @@ class ChatApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme} >
-        <div className="ChatApp">
-          <Navbar/>
-          <RecentList/>
+        <div
+          style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap',
+                  height: '100vh', justifyContent: 'center', margin: '0'}}
+        >
+          <Navbar />
+          <RecentList />
           <MessageWindow />
-
-          <Footer/>
+          <Footer />
         </div>
       </ MuiThemeProvider>
     );
