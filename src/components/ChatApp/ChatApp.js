@@ -20,35 +20,24 @@ import './ChatApp.css';
 const muiTheme = getMuiTheme({
   palette: {
     canvasColor: '#0F143A',
-    textColor: '#FFFFFF'
+    textColor: '#555'
   }
 });
 
 class ChatApp extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme} >
-        <div
-          style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap',
-                  height: '100vh', justifyContent: 'center', margin: '0'}}
-        >
-          <Navbar />
-          <RecentList />
-          <MessageWindow />
-          <Footer />
-        </div>
-      </ MuiThemeProvider>
-    //   <MuiThemeProvider muiTheme={muiTheme}>
-    //       <div>
-    //         <Navbar/>
-    //         <div className = "flex-container">
-    //           <RecentList/>
-    //           <MessageWindow />
-    //           <OptionsMenu />
-    //         </div>
-    //         <Footer/>
-    //       </div>
-    //   </MuiThemeProvider>
+      <MuiThemeProvider muiTheme={muiTheme}>
+          <div>
+            <Navbar/>
+            <div className = "flex-container">
+              <RecentList/>
+              <MessageWindow />
+              <OptionsMenu />
+            </div>
+            <Footer/>
+          </div>
+      </MuiThemeProvider>
     );
   }
 }
