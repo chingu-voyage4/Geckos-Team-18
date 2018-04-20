@@ -28,7 +28,7 @@ handleToggle = () => this.setState({open: !this.state.open});
           onRequestChange={(open) => this.setState({open})}>
             <MenuItem>Friends</MenuItem>
             <MenuItem>Messages</MenuItem>
-            <MenuItem>Opions</MenuItem>
+            <MenuItem>Options</MenuItem>
         </Drawer>
       </div>
     );

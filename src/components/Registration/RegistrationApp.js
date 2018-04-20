@@ -1,15 +1,17 @@
 // TOP LEVEL COMPONENT
 
+// This is a top level component rendered at the '/registration' endpoint.
+// It displays the navbar and a RegistrationCard where users can enter
+// their handle, email address, and password.
 import React, { Component } from 'react';
 
-import Footer from '../Footer/Footer.js';
+// import Footer from '../Footer/Footer.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js';
-import MessageWindow from '../MessageWindow/MessageWindow';
-import RecentList  from '../RecentList/RecentList';
-import OptionsMenu from '../OptionsMenu/OptionsMenu';
-import './ChatApp.css';
+import RegistrationCard from './RegistrationCard.js';
+
+import './RegistrationApp.css';
 
 // A couple of adjustments to begin generating a custom theme for
 // our project. There are many other components that can be styled
@@ -24,22 +26,26 @@ const muiTheme = getMuiTheme({
   }
 });
 
-class ChatApp extends Component {
+class RegistrationApp extends Component {
   render() {
+    const styles = {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center'
+    };
+
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-          <div>
-            <Navbar/>
-            <div className = "flex-container">
-              <RecentList/>
-              <MessageWindow />
-              <OptionsMenu />
-            </div>
-            <Footer/>
+          <div style={styles}>
+          <Navbar/>
+          <div className="flex-container">
+            <RegistrationCard/>
+          </div>
           </div>
       </MuiThemeProvider>
     );
   }
 }
 
-export default ChatApp;
+export default RegistrationApp;
