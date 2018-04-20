@@ -8,7 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js';
 import MessageWindow from '../MessageWindow/MessageWindow';
 import RecentList  from '../RecentList/RecentList';
-import OptionsMenu from '../OptionsMenu/OptionsMenu'
+import OptionsMenu from '../OptionsMenu/OptionsMenu';
 import './ChatApp.css';
 
 // A couple of adjustments to begin generating a custom theme for
@@ -19,36 +19,25 @@ import './ChatApp.css';
 
 const muiTheme = getMuiTheme({
   palette: {
-    canvasColor: '#0F143A',
-    textColor: '#FFFFFF'
+    canvasColor: '#f2f2f2',
+    textColor: '#555'
   }
 });
 
 class ChatApp extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme} >
-        <div
-          style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap',
-                  height: '100vh', justifyContent: 'center', margin: '0'}}
-        >
-          <Navbar />
-          <RecentList />
-          <MessageWindow />
-          <Footer />
-        </div>
-      </ MuiThemeProvider>
-    //   <MuiThemeProvider muiTheme={muiTheme}>
-    //       <div>
-    //         <Navbar/>
-    //         <div className = "flex-container">
-    //           <RecentList/>
-    //           <MessageWindow />
-    //           <OptionsMenu />
-    //         </div>
-    //         <Footer/>
-    //       </div>
-    //   </MuiThemeProvider>
+      <MuiThemeProvider muiTheme={muiTheme}>
+          <div>
+            <Navbar/>
+            <div className = "flex-container">
+              <RecentList/>
+              <MessageWindow />
+              <OptionsMenu />
+            </div>
+            <Footer/>
+          </div>
+      </MuiThemeProvider>
     );
   }
 }
