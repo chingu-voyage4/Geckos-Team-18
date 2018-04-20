@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ActiveUser from './ActiveUser';
-import {List, ListItem} from 'material-ui/List';
+import {List} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 

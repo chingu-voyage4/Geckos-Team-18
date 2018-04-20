@@ -8,6 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js';
 import MessageWindow from '../MessageWindow/MessageWindow';
 import RecentList  from '../RecentList/RecentList';
+import OptionsMenu from '../OptionsMenu/OptionsMenu'
 import './ChatApp.css';
 
 // A couple of adjustments to begin generating a custom theme for
@@ -19,7 +20,7 @@ import './ChatApp.css';
 const muiTheme = getMuiTheme({
   palette: {
     canvasColor: '#0F143A',
-    textColor: 'white'
+    textColor: '#FFFFFF'
   }
 });
 
@@ -37,6 +38,17 @@ class ChatApp extends Component {
           <Footer />
         </div>
       </ MuiThemeProvider>
+    //   <MuiThemeProvider muiTheme={muiTheme}>
+    //       <div>
+    //         <Navbar/>
+    //         <div className = "flex-container">
+    //           <RecentList/>
+    //           <MessageWindow />
+    //           <OptionsMenu />
+    //         </div>
+    //         <Footer/>
+    //       </div>
+    //   </MuiThemeProvider>
     );
   }
 }
