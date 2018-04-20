@@ -19,7 +19,7 @@ import './ChatApp.css';
 
 const muiTheme = getMuiTheme({
   palette: {
-    canvasColor: '#0F143A',
+    canvasColor: '#f2f2f2',
     textColor: '#555'
   }
 });
