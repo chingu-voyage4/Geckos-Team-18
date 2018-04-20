@@ -79,7 +79,7 @@ class MessageInput extends Component {
       <form>
         <TextField
           hintText='Place your message here'
-          hintStyle={{color: 'white'}}
+          hintStyle={{color: '#555'}}
           onKeyDown={this.onKeyDownHandler}
           onChange={this.onChangeHandler}
           value={this.state.message}
@@ -87,7 +87,7 @@ class MessageInput extends Component {
         <RaisedButton
           backgroundColor='#15DF88'
           label='Send' style={fromMeStyle}
-          onClick={this.sendMessage} 
+          onClick={this.sendMessage}
         />
       </form>
     </div>
