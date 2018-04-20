@@ -1,5 +1,9 @@
-// TOP LEVEL COMPONENT
+// DON'T LET THIS FILE FOOL YOU! IT'S BROKEN!
+// During a refactoring session, I tried to break the ChatApp file out
+// of its folder & to put the ChatApp.css files inline. It completely
+// broke the flexbox layout.
 
+// The apps entry point is still ChatApp/ChatApp.js
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
