@@ -17,26 +17,22 @@ class Footer extends Component {
         <Paper style={style} zDepth={1}>
           <a href='https://github.com/dontehightower' target='_blank' rel='noopener noreferrer'>
             <IconButton
-              iconClassName="fab fa-github" tooltip="Donte" iconStyle={{color: 'white'}}
-              tooltipPosition="top"
+              iconClassName="fab fa-github" tooltip="Donte" tooltipPosition="top"
             />
           </a>
           <a href='https://github.com/mjd123' target='_blank' rel='noopener noreferrer'>
             <IconButton
-              iconClassName="fab fa-github" tooltip="Marcus" iconStyle={{ color: 'white' }}
-              tooltipPosition="top"
+              iconClassName="fab fa-github" tooltip="Marcus" tooltipPosition="top"
             />
           </a>
           <a href='https://github.com/cadmoral' target='_blank' rel='noopener noreferrer'>
             <IconButton
-              iconClassName="fab fa-github" tooltip="Carla" iconStyle={{ color: 'white' }}
-              tooltipPosition="top"
+              iconClassName="fab fa-github" tooltip="Carla" tooltipPosition="top"
             />
           </a>
           <a href='https://github.com/NatRavenhill' target='_blank' rel='noopener noreferrer'>
             <IconButton
-              iconClassName="fab fa-github" tooltip="Nat" iconStyle={{ color: 'white' }}
-              tooltipPosition="top"
+              iconClassName="fab fa-github" tooltip="Nat" tooltipPosition="top"
             />
           </a>
         </Paper>
