@@ -1,18 +1,18 @@
-var express = require('express');
-var socket = require('socket.io');
+const express = require('express');
+const socket = require('socket.io');
 const path = require('path');
 const port = process.env.PORT || 8080;
 
 // App setup
-
-var app = express();
-var server = app.listen(path, function() {
+const app = express();
+const server = app.listen(path, function() {
   console.log('listening to port ' + port);
 });
 
 // socket.io setup
+const io = socket(server);
+let people = {};
 
-var io = socket(server);
 io.on('connection', (socket) => { // link front end to backend-- "connection"
   console.log('socket connection made');
   console.log(socket.id);
