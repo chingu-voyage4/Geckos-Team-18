@@ -17,8 +17,8 @@ import RecentList  from './RecentList/RecentList';
 
 const muiTheme = getMuiTheme({
   palette: {
-    canvasColor: '#0F143A',
-    textColor: 'white'
+    canvasColor: '#f2f2f2',
+    textColor: '#555'
   }
 });
 
