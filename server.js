@@ -24,6 +24,6 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
     socket.on('TYPING', (data) => { // send "typing" from MessageInput to all connected except origin
       console.log('someone typing');
       socket.broadcast.emit('SOMEONE_TYPING', data);
-    })
-  })
-})
+    });
+  });
+});
