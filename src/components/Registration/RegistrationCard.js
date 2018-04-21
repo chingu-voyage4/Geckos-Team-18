@@ -1,4 +1,4 @@
-// The RegistrationCard component will eventually be the entry point for 
+// The RegistrationCard component will eventually be the entry point for
 // The application. It should display a form for a user to insert a handle
 // When submitted, it should:
     // associate that handle with a unique socket ID,
@@ -11,20 +11,44 @@ import { Link } from 'react-router-dom';
 import './RegistrationCard.css';
 
 class RegistrationCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+        console.log(this.state.value);
+    }
+
+    handleSubmit(event) {
+        // {/* NEXT ITEM */ }
+        // {/* Store the handle for use when sending messages */ }
+            // send this.state.value to the socket-server and launch a join event
+        // {/* Associate Socket ID & handle so that any message from a unique id */ }
+        // {/* displays that it was sent from the associated handle */ }
+        console.log(event.value);
+        console.log('clicked me!');
+    }
+
     render() {
         return (
             <div className="registrationCard">
-                <TextField  hintText='Handle' /> <br/>
-                {/* <TextField  hintText='Email address' /><br/>
-                <TextField  hintText='Password' /><br/> */}
-
-
-                {/* NEXT ITEM */}
-                {/* Store the handle for use when sending messages */}
-                {/* Associate Socket ID & handle so that any message from a unique id */}
-                {/* displays that it was sent from the associated handle */}
+                <TextField
+                    id='handle'
+                    hintText='Handle'
+                    onChange={this.handleChange}
+                />
                 <Link to='/'>
-                    <RaisedButton backgroundColor='#F4175A' label='Create account' secondary={true}/>
+                    <RaisedButton
+                        backgroundColor='#F4175A'
+                        label='Create account'
+                        secondary={true}
+                        onClick={this.handleSubmit}
+                        />
                 </Link>
             </div>
         );
