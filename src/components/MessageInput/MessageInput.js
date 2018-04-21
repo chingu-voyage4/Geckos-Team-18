@@ -86,6 +86,12 @@ class MessageInput extends Component {
     const { fromMeStyle } = styles;
 
     return (
+        // Either a click of the RaisedButton, or a press of the 'Enter' key should submit
+    // the form(trigger the same function). // That function should fire a dispatch action
+    // the dispatch should take two parameters. The current value of the TextField, and
+    // the author.
+
+    // Need to change the form to a reduxForm so that it can be accessed by the redux store.
     <div className='input'>
       <form>
         <TextField
@@ -96,7 +102,7 @@ class MessageInput extends Component {
           value={this.state.message}
           // This ref is supposed to record the value of the textfield as a reference
           // possible/likely refactor opportunity later on.
-          ref={(node) => { TextField = node }}
+          // ref={(node) => { TextField = node }}
         />
         <RaisedButton
           backgroundColor='#15DF88'
