@@ -1,6 +1,7 @@
-// This component will be responsible for displaying Messages and
-// providing a place users to input a message.
-
+// A list of messages will be displayed in this component. Once the
+// MessageInput form is sent, its value will be passed to this and
+// added to the list of messages. It also contains the MessageInput
+// component.
 import React, { Component } from 'react';
 import MessageInput from '../MessageInput/MessageInput';
 import './MessageWindow.css';
@@ -37,7 +38,7 @@ class MessageWindow extends Component {
       };
 
     // a function for the message window component that adds "... is typing"
-    // to the page and removes that component if the server has not
+    // to the page and removes that message if the server has not
     // sent the typing event to the page in the last 1.5 seconds
     const addTyping = data => {
           this.timeout = setTimeout(() => {
@@ -47,7 +48,6 @@ class MessageWindow extends Component {
     }
 
   render() {
-
     const listStyle = {
       height: 'auto',
       marginBottom: 'auto',
