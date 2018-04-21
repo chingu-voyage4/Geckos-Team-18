@@ -13,7 +13,7 @@ class ActiveUser extends Component {
             hoverColor={orange100}
             primaryText={this.props.user.name}
             secondaryText='is online!'
-            leftAvatar={<Avatar src={this.props.user.image} size={30} />}
+            //leftAvatar={<Avatar src={this.props.user.image} size={30} />}
             rightIcon={<CommunicationChatBubble />}
             />
         );    

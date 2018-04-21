@@ -9,19 +9,24 @@ import React, { Component } from 'react';
 import { RaisedButton, TextField } from 'material-ui';
 import { Link } from 'react-router-dom';
 import './RegistrationCard.css';
+import io from 'socket.io-client';
 
 class RegistrationCard extends Component {
     constructor(props) {
         super(props);
-        this.state = { value: '' };
 
+        this.state = { 
+            value: '' 
+        };
+
+        this.socket = io('localhost:8080');
+    
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({ value: event.target.value });
-        console.log(this.state.value);
     }
 
     handleSubmit(event) {
@@ -30,8 +35,8 @@ class RegistrationCard extends Component {
             // send this.state.value to the socket-server and launch a join event
         // {/* Associate Socket ID & handle so that any message from a unique id */ }
         // {/* displays that it was sent from the associated handle */ }
-        console.log(event.value);
-        console.log('clicked me!');
+        this.socket.emit('create_user', (this.state.value));
+        this.socket.emit('join', (this.state.value));
     }
 
     render() {

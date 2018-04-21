@@ -1,7 +1,7 @@
 const express = require('express');
 const socket = require('socket.io');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 // App setup
 const app = express();
@@ -13,6 +13,7 @@ const server = app.listen(port, function() {
 const io = socket(server);
 let people = {};
 
+
 io.on('connection', (socket) => { // link front end to backend-- "connection"
 
   // within this scope, socket refers to an individual client's connection
@@ -21,15 +22,19 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
   console.log('socket connection made');
   console.log(socket.id);
 
+
   // When a person joins the chat room, inform the user that they have
   // successfully connected, display a message on all sockets informing
   // users that someone has joined, and add their handle(name) to the
   // people object.
+
   socket.on('join', (name) => {
-    people[socket.id] = name;
+    people.socketid = socket.id;
+    people.name = name;
     socket.emit('update', 'You have connected');
     io.sockets.emit('update', `${name} has joined the chat room.`);
     io.sockets.emit('update-people', people);
+    console.log(people);
   });
 
   // When a person sends a message, the server should emit an event that sends
@@ -45,8 +50,10 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
   socket.on('disconnect', () => {
     io.sockets.emit('update', people[socket.id] + 'left the chat room.');
     delete people[socket.id];
-    socket.sockets.emit('update-people', people);
+    io.sockets.emit('update-people', people);
   });
+
+
   // send "typing" from MessageInput to all connected except origin
   socket.on('TYPING', (data) => {
     console.log('someone typing');
