@@ -1,3 +1,7 @@
+// List of Current/Recent users of the chat app. To be rendered
+// on the left side of the page. This component is made into a 
+// container and connected to the redux store.
+
 import React, { Component } from 'react';
 import ActiveUser from './ActiveUser';
 import {List} from 'material-ui/List';
@@ -76,23 +80,21 @@ getUser(){
         // name: 'Alice',
         // image: 'data:image/jpeg;base64,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'
         // }
-    ]
+    ];
 }
 renderUser(){
     return this.getUser().map(user => <ActiveUser key={user.id} user={user}/>);
 }
-
-
     render() {
         return (
-            <div className="RecentList"> 
+            <div className="RecentList">
             <List>
             <Subheader className='Subheader-list'>People Online</Subheader>
                 {this.renderUser()}
             </List>
             <Divider/>
             </div>
-        );    
-}
+        );
+    }
 }
 export default RecentList;
