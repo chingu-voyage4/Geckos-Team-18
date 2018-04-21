@@ -26,4 +26,4 @@ export const messageReceived = (message, author) => ({
 export const populateUsersList = users => ({
   type: types.USERS_LIST,
   users
-})
+});
