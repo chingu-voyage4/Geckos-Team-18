@@ -1,3 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui';
+import PropTypes from 'prop-types';
+
+const Message = ({ message, author }) => (
+  <p>
+    <em>{author}</em>: {message}
+  </p>
+);
+
+Message.propTypes = {
+  message: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired
+};
+
+export default Message;

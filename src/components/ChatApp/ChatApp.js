@@ -27,17 +27,17 @@ const muiTheme = getMuiTheme({
 class ChatApp extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
+        <MuiThemeProvider muiTheme={muiTheme}>
           <div>
-            <Navbar/>
-            <div className = "flex-container">
-              <RecentList/>
-              <MessageWindow />
-              <OptionsMenu />
-            </div>
-            <Footer/>
+          <Navbar/>
+          <div className = "flex-container">
+            <RecentList/>
+            <MessageWindow />
+            <OptionsMenu />
           </div>
-      </MuiThemeProvider>
+          <Footer/>
+          </div>
+        </MuiThemeProvider>
     );
   }
 }
