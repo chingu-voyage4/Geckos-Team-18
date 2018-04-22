@@ -35,11 +35,12 @@ class MessageInput extends Component {
         this.setState({message: ''});
       }
 
-      onChangeHandler(e) { // tracks users input into TextField
-        this.setState({message: e.target.value});
-      }
 
-      onKeyDownHandler(e) { // track if users are typing
+      // Each time the user presses a key, fire a TYPING event and set
+      // a 1.5 second timer.
+      // If the user has not pressed a key in the last 1.5 seconds, change
+      // this.state.typing to false
+      onChangeHandler(e) {
         this.timeout = undefined;
         console.log(this.timeout);
         if (!this.state.typing) {
@@ -50,7 +51,17 @@ class MessageInput extends Component {
           clearTimeout(this.timeout);
           this.timeout = setTimeout(this.timeoutFunction, 1500);
         }
+        this.setState({ message: e.target.value });
+      }
 
+      // If the key pressed is enter
+      // dispatch the sendMessage action, passing it the value
+      // of the TextField
+      onKeyDownHandler(e) {
+        if (e.key === 'Enter') {
+          this.props.dispatch(e.target.value, 'Me');
+          e.target.value ='';
+        }
       }
 
       // reverts this.state.typing to false causing another check on if keydown
@@ -75,6 +86,12 @@ class MessageInput extends Component {
     const { fromMeStyle } = styles;
 
     return (
+        // Either a click of the RaisedButton, or a press of the 'Enter' key should submit
+    // the form(trigger the same function). // That function should fire a dispatch action
+    // the dispatch should take two parameters. The current value of the TextField, and
+    // the author.
+
+    // Need to change the form to a reduxForm so that it can be accessed by the redux store.
     <div className='input'>
       <form>
         <TextField
@@ -83,6 +100,9 @@ class MessageInput extends Component {
           onKeyDown={this.onKeyDownHandler}
           onChange={this.onChangeHandler}
           value={this.state.message}
+          // This ref is supposed to record the value of the textfield as a reference
+          // possible/likely refactor opportunity later on.
+          // ref={(node) => { TextField = node }}
         />
         <RaisedButton
           backgroundColor='#15DF88'
