@@ -42,7 +42,6 @@ class MessageInput extends Component {
       // this.state.typing to false
       onChangeHandler(e) {
         this.timeout = undefined;
-        console.log(this.timeout);
         if (!this.state.typing) {
           this.setState({ typing: true });
           this.socket.emit('TYPING');
@@ -55,7 +54,7 @@ class MessageInput extends Component {
       }
 
       // If the key pressed is enter
-      // dispatch the sendMessage action, passing it the value
+      // dispatch the addMessage action, passing it the value
       // of the TextField
       onKeyDownHandler(e) {
         if (e.key === 'Enter') {
@@ -70,21 +69,6 @@ class MessageInput extends Component {
       }
 
   render() {
-    const styles = {
-      fromMeStyle: {
-        backgroundColor: '#F4175A',
-        alignSelf: 'flex-end',
-        marginLeft: 10
-
-      },
-      toMeStyles: {
-        marginLeft: 10,
-        alignSelf: 'flex-end',
-        backgroundColor: '#fff'
-      }
-    };
-    const { fromMeStyle } = styles;
-
     return (
         // Either a click of the RaisedButton, or a press of the 'Enter' key should submit
     // the form(trigger the same function). // That function should fire a dispatch action
@@ -106,15 +90,13 @@ class MessageInput extends Component {
         />
         <RaisedButton
           backgroundColor='#15DF88'
-          label='Send' style={fromMeStyle}
+          label='Send'
           onClick={this.sendMessage}
         />
       </form>
     </div>
     );
   }
-
-
 }
 
 export default MessageInput;

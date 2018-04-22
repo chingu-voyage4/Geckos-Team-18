@@ -21,7 +21,7 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
   // throughout the function to perform CRUD operations on the people object.
   console.log(`socket connection made ${socket.id}`);
   socket.on('action', action => {
-    if(action.type === 'server/hello'){
+    if (action.type === 'server/hello') {
       console.log('Got hello data!', action.data);
       socket.emit('action', {type: 'message', data:'good day!'});
     }
