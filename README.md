@@ -9,3 +9,4 @@ The project was initially inspired by the [How to build your own real-time chat 
 - [Socket.io](https://socket.io/) - Real-Time Engine
 - [React-Material UI](https://www.material-ui.com/#/) - React Component Library
 - [Express](https://expressjs.com/) - Server-side framework
+- [Redux-Socket.io](https://github.com/itaylor/redux-socket.io) - Middleware for connecting redux and socket.io server
