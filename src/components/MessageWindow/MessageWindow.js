@@ -21,9 +21,9 @@ class MessageWindow extends Component {
 
     this.socket = io('localhost:8080');
     // listen for " RECEIVE_MESSAGE" from server
-    this.socket.on('RECEIVE_MESSAGE', function(data) {
-        addMessage(data);
-        console.log(data);
+    this.socket.on('RECEIVE_MESSAGE', (people, data) => {
+        console.log(people);
+        addMessage(people, data);
     });
 
     this.socket.on('SOMEONE_TYPING', (data) => {
@@ -32,9 +32,12 @@ class MessageWindow extends Component {
       addTyping(data);
     });
 
-    const addMessage = data => { // add data from server to state
-        this.setState({messages: [ ...this.state.messages, data ]});
+    const addMessage = (handle, data) => { // add data from server to state
+        this.setState({
+          messages: [ ...this.state.messages, data ],
+        });
         console.log(this.state.messages);
+        console.log(handle);
       };
 
     // a function for the message window component that adds "... is typing"
@@ -64,7 +67,7 @@ class MessageWindow extends Component {
     };
 
     const typingText = {
-      color: 'white',
+      color: '#0F143A',
       fontStyle: 'italic',
       fontSize: '1em',
       marginRight: 'auto',

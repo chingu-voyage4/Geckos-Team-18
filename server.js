@@ -34,14 +34,13 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
     socket.emit('update', 'You have connected');
     io.sockets.emit('update', `${name} has joined the chat room.`);
     io.sockets.emit('update-people', people);
-    console.log(people);
+    console.log({people});
   });
 
   // When a person sends a message, the server should emit an event that sends
   // that message out to all sockets.
   socket.on('SEND_MESSAGE', (data) => {
-    console.log(data);
-    io.sockets.emit('RECEIVE_MESSAGE', people[socket.id], data);
+    io.sockets.emit('RECEIVE_MESSAGE', people, data);
   });
 
   // When a person disconnects, update the people object, delete the client id
