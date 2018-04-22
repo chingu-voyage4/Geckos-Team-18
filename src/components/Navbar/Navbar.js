@@ -21,15 +21,9 @@ handleToggle = () => this.setState({open: !this.state.open});
           // for the theme on the Figma and palleton
           style={{ height: 'auto', backgroundColor: '#15df88', borderBottom: '1px solid white' }}
             iconClassNameRight = "muidocs-icon-navigation-expand-more"
+            iconElementLeft={(<div />)}
             onLeftIconButtonClick={this.handleToggle}
         />
-        <Drawer open={this.state.open}
-          docked={false}
-          onRequestChange={(open) => this.setState({open})}>
-            <MenuItem>Friends</MenuItem>
-            <MenuItem>Messages</MenuItem>
-            <MenuItem>Options</MenuItem>
-        </Drawer>
       </div>
     );
   }
