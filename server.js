@@ -19,8 +19,13 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
   // within this scope, socket refers to an individual client's connection
   // with the server. Each socket has a unique id parameter that is used
   // throughout the function to perform CRUD operations on the people object.
-  console.log('socket connection made');
-  console.log(socket.id);
+  console.log(`socket connection made ${socket.id}`);
+  socket.on('action', action => {
+    if(action.type === 'server/hello'){
+      console.log('Got hello data!', action.data);
+      socket.emit('action', {type: 'message', data:'good day!'});
+    }
+  });
 
 
   // When a person joins the chat room, inform the user that they have
