@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import RecentListComponent from '../components/RecentList/RecentList';
 
-export const UserList = connect(state => ({
-  users: state.users
-}), {})(RecentListComponent);
+const mapStateToProps = state => {
+   return { users: state.users };
+};
+
+export const UserList = connect(mapStateToProps)(RecentListComponent);

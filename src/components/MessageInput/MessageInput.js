@@ -8,6 +8,7 @@
 import React, { Component } from 'react';
 import { RaisedButton, TextField } from 'material-ui';
 import io from 'socket.io-client';
+import { SEND_MESSAGE } from '../../actions/types';
 
 class MessageInput extends Component {
   constructor(props){
@@ -27,11 +28,16 @@ class MessageInput extends Component {
     }
 
       sendMessage() {  // to server
+        debugger;
+        this.props.dispatch({
+          type: SEND_MESSAGE,
+          message: this.state.message,
+          author: 'Me'
+        });
         this.socket.emit('SEND_MESSAGE', {
           message: this.state.message,
           fromWhatUser: this.state.handle // name of user who sent message
         });
-        this.setState({messages: [...this.state.messages, this.state.message]});
         this.setState({message: ''});
       }
 
@@ -59,7 +65,8 @@ class MessageInput extends Component {
       // of the TextField
       onKeyDownHandler(e) {
         if (e.key === 'Enter') {
-          this.props.dispatch(e.target.value, 'Me');
+          e.preventDefault();
+          this.sendMessage();
           e.target.value ='';
         }
       }

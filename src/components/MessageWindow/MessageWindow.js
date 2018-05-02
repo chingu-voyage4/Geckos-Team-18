@@ -4,6 +4,7 @@
 // component.
 import React, { Component } from 'react';
 import { MessageInput } from '../../containers/MessageInput';
+import store from '../../reducers';
 import './MessageWindow.css';
 import io from 'socket.io-client';
 import {List, ListItem} from 'material-ui/List';
@@ -14,7 +15,7 @@ class MessageWindow extends Component {
 
     this.state = {
       message: '', // current most recent message
-      messages: [], // arrey of all messages sent/recieved
+      messages: this.props.messages, // arrey of all messages sent/recieved
       handle: '', // name? this.props.handle
       typing: '' // true or false
     };
@@ -78,11 +79,11 @@ class MessageWindow extends Component {
       <div className='message-window'>
         {this.state.typing ? <span style={typingText}>{'typing'}</span> : ''}
         <List style={listStyle}>
-          {this.state.messages.map((item, index) =>
+          {this.props.messages.map(message =>
             <ListItem
-              key={index}
+              key={message.id}
               style={listItemStyle}
-              primaryText={item.message}
+              primaryText={message.message}
             />
           )}
         </List>
