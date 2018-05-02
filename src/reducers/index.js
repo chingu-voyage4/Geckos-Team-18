@@ -18,7 +18,10 @@ const chat = combineReducers({
 
 // The redux store is the result of applying the socketIoMiddleware to
 // the chat.
-const store = applyMiddleware(socketIoMiddleware)(createStore)(chat);
+const store = createStore(
+  chat,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // Look at the redux store
 store.subscribe(() => {

@@ -3,12 +3,12 @@
 // components that care about state; specifically the MessageWindow.
 
 import { connect } from 'react-redux';
-import MessageInputComponent from '../components/MessageInput';
-import { addMessage } from '../actions/index';
+import MessageInputComponent from '../components/MessageInput/MessageInput';
+import { sendMessage } from '../actions/index';
 
 const mapDispatchToProps = dispatch => ({
   dispatch: (message, author) => {
-    dispatch(addMessage(message, author));
+    dispatch(sendMessage(message, author));
   }
 });
 

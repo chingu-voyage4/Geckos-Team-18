@@ -6,8 +6,8 @@ import Footer from '../Footer/Footer.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js';
-import MessageWindow from '../MessageWindow/MessageWindow';
-import RecentList  from '../RecentList/RecentList';
+import { MessageWindow } from '../../containers/MessageWindow';
+import { UserList } from '../../containers/RecentList';
 import OptionsMenu from '../OptionsMenu/OptionsMenu';
 import './ChatApp.css';
 
@@ -31,7 +31,7 @@ class ChatApp extends Component {
           <div>
           <Navbar/>
           <div className = "flex-container">
-            <RecentList/>
+            <UserList />
             <MessageWindow />
             <OptionsMenu />
           </div>

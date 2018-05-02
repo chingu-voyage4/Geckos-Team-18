@@ -3,7 +3,7 @@
 // added to the list of messages. It also contains the MessageInput
 // component.
 import React, { Component } from 'react';
-import MessageInput from '../MessageInput/MessageInput';
+import { MessageInput } from '../../containers/MessageInput';
 import './MessageWindow.css';
 import io from 'socket.io-client';
 import {List, ListItem} from 'material-ui/List';
