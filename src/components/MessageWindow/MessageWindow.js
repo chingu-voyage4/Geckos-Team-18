@@ -60,11 +60,12 @@ class MessageWindow extends Component {
     };
 
     const listItemStyle = {
-      backgroundColor: 'rgb(244, 23, 90, 0.4)',
-      borderRadius: '25px',
+      width: '100%',
+      backgroundColor: '#fff',
+      borderBottom: '1px solid #e2e2e2',
       fontSize: '1.3em',
-      marginBottom: '1em',
-      width: 'fit-content'
+      marginBottom: '0'
+      // width: 'fit-content'
     };
 
     const typingText = {
@@ -83,7 +84,9 @@ class MessageWindow extends Component {
             <ListItem
               key={message.id}
               style={listItemStyle}
-              primaryText={message.message}
+              // Obvious refactor opportunity
+              primaryText={`${message.message.author}`}
+              secondaryText={`${message.message.message}`}
             />
           )}
         </List>

@@ -27,17 +27,19 @@ class MessageInput extends Component {
       this.timeoutFunction = this.timeoutFunction.bind(this);
     }
 
-      sendMessage() {  // to server
-        debugger;
+      sendMessage() { 
+        // add the message to redux store
         this.props.dispatch({
           type: SEND_MESSAGE,
           message: this.state.message,
           author: 'Me'
         });
-        this.socket.emit('SEND_MESSAGE', {
-          message: this.state.message,
-          fromWhatUser: this.state.handle // name of user who sent message
-        });
+        // send the message to the server
+        
+        // this.socket.emit('SEND_MESSAGE', {
+        //   message: this.state.message,
+        //   fromWhatUser: this.state.handle // name of user who sent message
+        // });
         this.setState({message: ''});
       }
 

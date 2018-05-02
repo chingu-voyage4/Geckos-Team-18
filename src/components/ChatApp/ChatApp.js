@@ -33,7 +33,7 @@ class ChatApp extends Component {
           <div className = "flex-container">
             <UserList />
             <MessageWindow />
-            <OptionsMenu />
+            {/* <OptionsMenu /> */}
           </div>
           <Footer/>
           </div>
