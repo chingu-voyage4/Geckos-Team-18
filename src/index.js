@@ -13,8 +13,8 @@ import RegistrationApp from './components/Registration/RegistrationApp';
 ReactDOM.render(<Provider store={store}>
                     <BrowserRouter>
                         <div>
-                            <Route exact path="/" component={ChatApp} />
-                            <Route path="/register" component={RegistrationApp}/>
+                            <Route exact path="/" component={RegistrationApp} />
+                            <Route path="/chat" component={ChatApp}/>
                         </div>
                     </BrowserRouter>
                 </Provider>,

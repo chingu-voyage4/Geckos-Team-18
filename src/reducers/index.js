@@ -6,12 +6,15 @@ import createSocketIoMiddleware from 'redux-socket.io';
 import io from 'socket.io-client';
 import messages from './messages';
 import users from './users';
+import { myName } from './myname';
+import { addUser } from '../actions';
 
 const socket = io('http://localhost:3000');
 const socketIoMiddleware = createSocketIoMiddleware(socket, 'server/');
 
 // Basic chat functionality consists of two parts: messages and users
 const chat = combineReducers({
+  myName,
   messages,
   users
 });
@@ -28,6 +31,7 @@ store.subscribe(() => {
   console.log('new client state', store.getState());
 });
 // Dispatch an action to say hello to the server
-store.dispatch({type: 'server/hello', data:'Hello!'});
+store.dispatch(addUser('Rick'));
+store.dispatch(addUser('Morty'));
 
 export default store;

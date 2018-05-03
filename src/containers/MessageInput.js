@@ -6,10 +6,15 @@ import { connect } from 'react-redux';
 import MessageInputComponent from '../components/MessageInput/MessageInput';
 import { sendMessage } from '../actions/index';
 
+
+const mapStateToProps = state => {
+  return { myName: state.myName };
+};
+
 const mapDispatchToProps = dispatch => ({
   dispatch: (message, author) => {
     dispatch(sendMessage(message, author));
   }
 });
 
-export const MessageInput = connect(() => ({}), mapDispatchToProps)(MessageInputComponent);
+export const MessageInput = connect(mapStateToProps, mapDispatchToProps)(MessageInputComponent);

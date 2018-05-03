@@ -27,3 +27,8 @@ export const populateUsersList = users => ({
   type: types.USERS_LIST,
   users
 });
+
+export const recordName = name => ({
+  type: types.RECORD_NAME,
+  name
+});

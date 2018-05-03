@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Navbar from '../Navbar/Navbar.js';
-import RegistrationCard from './RegistrationCard.js';
+import { RegistrationCard } from '../../containers/RegistrationCard';
 
 import './RegistrationApp.css';
 

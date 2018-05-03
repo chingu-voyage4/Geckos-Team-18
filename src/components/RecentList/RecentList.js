@@ -37,7 +37,7 @@ class RecentList extends Component {
 
 
 renderUser(){
-    return this.state.users.map(user => <ActiveUser key={user.socketid} user={user}/>);
+    return this.props.users.map(user => <ActiveUser key={user.socketid} user={user}/>);
 }
     render() {
         return (

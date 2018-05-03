@@ -4,3 +4,4 @@ export const USER_JOINED = 'user_joined';
 export const USERS_LIST = 'users_list';
 export const DISCONNECT = 'disconnect';
 export const TYPING = 'typing';
+export const RECORD_NAME = 'RECORD_NAME';

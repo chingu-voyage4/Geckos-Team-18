@@ -32,7 +32,7 @@ class MessageInput extends Component {
         this.props.dispatch({
           type: SEND_MESSAGE,
           message: this.state.message,
-          author: 'Me'
+          author: this.props.myName
         });
         // send the message to the server
         

@@ -60,7 +60,7 @@ class MessageWindow extends Component {
     };
 
     const listItemStyle = {
-      width: '100%',
+      width: '90%',
       backgroundColor: '#fff',
       borderBottom: '1px solid #e2e2e2',
       fontSize: '1.3em',
