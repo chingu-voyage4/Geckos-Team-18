@@ -8,6 +8,7 @@ import store from '../../reducers';
 import './MessageWindow.css';
 import io from 'socket.io-client';
 import {List, ListItem} from 'material-ui/List';
+import { SEND_MESSAGE, MESSAGE_RECIEVED } from '../../actions/types';
 
 class MessageWindow extends Component {
   constructor(props){
@@ -22,9 +23,13 @@ class MessageWindow extends Component {
 
     this.socket = io('localhost:8080');
     // listen for " RECEIVE_MESSAGE" from server
-    this.socket.on('RECEIVE_MESSAGE', (people, data) => {
-        console.log(people);
-        addMessage(people, data);
+    this.socket.on('RECIEVE_MESSAGE', (data) => {
+      this.props.dispatch({
+        type: MESSAGE_RECIEVED,
+        message: data.message,
+        author: data.author
+      });
+        addMessage(data.message, data.author);
     });
 
     this.socket.on('SOMEONE_TYPING', (data) => {
@@ -85,8 +90,8 @@ class MessageWindow extends Component {
               key={message.id}
               style={listItemStyle}
               // Obvious refactor opportunity
-              primaryText={`${message.message.author}`}
-              secondaryText={`${message.message.message}`}
+              primaryText={`${message.message}`}
+              secondaryText={`${message}`}
             />
           )}
         </List>

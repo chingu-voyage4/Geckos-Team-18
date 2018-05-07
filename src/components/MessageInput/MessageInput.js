@@ -27,19 +27,18 @@ class MessageInput extends Component {
       this.timeoutFunction = this.timeoutFunction.bind(this);
     }
 
-      sendMessage() { 
+      sendMessage() {
         // add the message to redux store
         this.props.dispatch({
           type: SEND_MESSAGE,
           message: this.state.message,
           author: this.props.myName
         });
-        // send the message to the server
-        
-        // this.socket.emit('SEND_MESSAGE', {
-        //   message: this.state.message,
-        //   fromWhatUser: this.state.handle // name of user who sent message
-        // });
+        // send the message to the server 
+        this.socket.emit('SEND_MESSAGE', {
+          message: this.state.message,
+          fromWhatUser: this.props.myName // name of user who sent message
+        });
         this.setState({message: ''});
       }
 
@@ -50,7 +49,7 @@ class MessageInput extends Component {
       // this.state.typing to false
       onChangeHandler(e) {
         this.timeout = undefined;
-        console.log(this.timeout);
+        // console.log(this.timeout);
         if (!this.state.typing) {
           this.setState({ typing: true });
           this.socket.emit('TYPING');

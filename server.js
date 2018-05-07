@@ -20,13 +20,6 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
   // with the server. Each socket has a unique id parameter that is used
   // throughout the function to perform CRUD operations on the users object.
   console.log(`socket connection made ${socket.id}`);
-  socket.on('action', action => {
-    if(action.type === 'server/hello'){
-      console.log('Got hello data!', action.data);
-      socket.emit('action', {type: 'message', data:'good day!'});
-    }
-  });
-
 
   // When a person joins the chat room, inform the user that they have
   // successfully connected, display a message on all sockets informing
@@ -44,7 +37,8 @@ io.on('connection', (socket) => { // link front end to backend-- "connection"
   // When a person sends a message, the server should emit an event that sends
   // that message out to all sockets.
   socket.on('SEND_MESSAGE', (data) => {
-    io.sockets.emit('RECIEVE_MESSAGE', users, data);
+    console.log(data);
+    io.sockets.emit('RECIEVE_MESSAGE', data.message, data.fromWhatUser);
   });
 
   // When a person disconnects, update the users object, delete the client id
